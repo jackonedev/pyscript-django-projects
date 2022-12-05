@@ -1,4 +1,4 @@
-from js import document
+from js import document, console
 import json
 from pyodide.http import pyfetch
 from pyodide import create_proxy
@@ -24,7 +24,9 @@ async def make_request(url, method, body=None, headers=None):
 
 
 async def get_number_on_click(e):
+    console.info('get_number_on_click')
     data = await make_request(url='/', method='GET')
+    console.log(data)
     ul = document.getElementById('left')
     # ul = document.querySelector('#left')
     li = document.createElement('li')
@@ -37,6 +39,7 @@ async def get_number_on_click(e):
 
 async def send_number_on_click(e):
     number = e.target.innerHTML
+    console.log(document.querySelector('title'))
 
     csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value
     body = json.dumps({'number': number})
@@ -50,9 +53,21 @@ async def send_number_on_click(e):
 
     ul.appendChild(li)
 
+# async def change_route(e):
+#     csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value
+#     headers = {'X-CSRFToken': csrf}
+#     data = await make_request(url='/api/v1/', method='PUT', headers=headers)
+    
+#     # return await data.json()
+
+
 
 def main():
+    console.log(document)
     button = document.getElementById('button')
     button.addEventListener("click", create_proxy(get_number_on_click))
+    
+    # router = document.getElementById('router')
+    # router.addEventListener("click", create_proxy(change_route))
 
 main()

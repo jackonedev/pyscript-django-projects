@@ -20,3 +20,9 @@ class PyScriptHandlerView(View):
     def post(self, request):
         number = json.loads(request.body)['number']
         return JsonResponse({'data': f'You sent {float(number)}'})
+
+    # def put(self, request):
+    #     print ('hello world')
+    #     number = randint(1, 10)
+    #     print (number)
+    #     return render(request, 'success.html')
