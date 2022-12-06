@@ -1,7 +1,0 @@
-1) Django and Pyscript: DOM Manipulation
-
-https://www.youtube.com/watch?v=zw4V48Al8LU
-
-
-2) Django and Pyscript: validating forms
-https://www.youtube.com/watch?v=XrumcxMEJ8k
