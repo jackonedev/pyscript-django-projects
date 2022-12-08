@@ -53,13 +53,6 @@ async def send_number_on_click(e):
 
     ul.appendChild(li)
 
-# async def change_route(e):
-#     csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value
-#     headers = {'X-CSRFToken': csrf}
-#     data = await make_request(url='/api/v1/', method='PUT', headers=headers)
-    
-#     # return await data.json()
-
 
 
 def main():
@@ -67,7 +60,5 @@ def main():
     button = document.getElementById('button')
     button.addEventListener("click", create_proxy(get_number_on_click))
     
-    # router = document.getElementById('router')
-    # router.addEventListener("click", create_proxy(change_route))
 
 main()
