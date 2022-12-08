@@ -6,7 +6,7 @@ from js import document, console
 
 
 
-# pyscript application
+# pyscript application: es el punto 2.3 automatizado
 def append_li(parentQueryStr, templateQueryStr, itemQueryStr, array, log=False):
 
     lista = document.querySelector(parentQueryStr)
@@ -27,7 +27,7 @@ def main():
 
     arrayLista = ['item 1', 'item 2', 'item 3']
     parentQueryStr = '#lista'
-    templateQueryStr = '#template-li'
+    templateQueryStr = '#template-lista'
     itemQueryStr = '.list span'
     append_li(parentQueryStr, templateQueryStr, itemQueryStr, arrayLista, log=True)
 
@@ -50,6 +50,7 @@ main()
 #     fragment.appendChild(clone)
 
 # lista.appendChild(fragment)
+
 
 #2.2) es mas legible
 # lista = document.querySelector('#lista')
